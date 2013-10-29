@@ -21,8 +21,13 @@
 {
     if (self = [super init]) {
         
-        self.modelRoutes = [[NSMutableArray alloc] initWithObjects:@"Route 1", @"Route 2", @"Route 3", @"Route 4", @"Route 5", @"Route 6", @"Route 7", @"Route 8", @"Route 9", @"Route 10", nil];
-        self.modelFavoriteRoutes = [[NSMutableArray alloc] initWithObjects:@"Fav Route 1", @"Fav Route 2", @"Fav Route 3", @"Fav Route 4", @"Fav Route 5", @"Fav Route 6", @"Fav Route 7", @"Fav Route 8", @"Fav Route 9", @"Fav Route 10", nil];
+        self.modelRoutes = [[NSMutableArray alloc] init];
+        self.modelFavoriteRoutes = [[NSMutableArray alloc] init];
+        
+        for (int i=1; i<=10; i++) {
+            [self.modelRoutes addObject:[NSString stringWithFormat:@"%@ %d",NSLocalizedString(@"ROUTE", nil), i]];
+            [self.modelFavoriteRoutes addObject:[NSString stringWithFormat:@"%@ %d",NSLocalizedString(@"ROUTE", nil), i]];
+        }
     }
     return  self;
 }

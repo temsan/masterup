@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F4804E118202C44003B3085 /* RouteListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F4804E018202C44003B3085 /* RouteListCell.xib */; };
 		8F5408AB182002640099667C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F5408AA182002640099667C /* Foundation.framework */; };
 		8F5408AD182002640099667C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F5408AC182002640099667C /* CoreGraphics.framework */; };
 		8F5408AF182002640099667C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F5408AE182002640099667C /* UIKit.framework */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F4804E018202C44003B3085 /* RouteListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RouteListCell.xib; path = UI/RouteListCell.xib; sourceTree = "<group>"; };
 		8F5408A7182002640099667C /* MU106.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MU106.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F5408AA182002640099667C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8F5408AC182002640099667C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -208,6 +210,7 @@
 			children = (
 				8F5408EC182008430099667C /* RouteListCell.h */,
 				8F5408ED182008430099667C /* RouteListCell.m */,
+				8F4804E018202C44003B3085 /* RouteListCell.xib */,
 			);
 			name = RouteListCell;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F4804E118202C44003B3085 /* RouteListCell.xib in Resources */,
 				8F5408C3182002640099667C /* Images.xcassets in Resources */,
 				8FF7269418202172009E3D44 /* Main.storyboard in Resources */,
 				8F5408FB1820107E0099667C /* Localizable.strings in Resources */,

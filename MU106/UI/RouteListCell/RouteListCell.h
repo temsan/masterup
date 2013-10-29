@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface RouteListCell : UITableViewCell
+    
+    @property (weak, nonatomic) IBOutlet UIImageView *imgStarred;
+    @property (weak, nonatomic) IBOutlet UILabel *lblRoute;
+    @property (weak, nonatomic) IBOutlet UILabel *lblPrice;
 
-@end
+    @end

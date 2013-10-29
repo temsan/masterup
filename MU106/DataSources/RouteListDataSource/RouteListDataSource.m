@@ -7,6 +7,7 @@
 //
 
 #import "RouteListDataSource.h"
+#import "UI.h"
 
 @interface RouteListDataSource()
 
@@ -53,17 +54,27 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"RouteListCell";
+    RouteListCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+
+    if (cell == nil) {
+        cell = [[RouteListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+//    if (cell == nil) {
+//        //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"DynamicReportCell"];
+//        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"RouteListCell" owner:self options:nil];
+//        cell = [nib objectAtIndex:0];
+//    }
 
     NSString *label;
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
     if (indexPath.section == 0) {
         label = [self.modelFavoriteRoutes objectAtIndex:indexPath.row];
     } else {
         label = [self.modelRoutes objectAtIndex:indexPath.row];
     }
-    cell.textLabel.text = label;
-    //NSLog(@"IP = %d", indexPath);
-    // Configure the cell...
+    cell.lblRoute.text = label;
+    cell.lblPrice.text = @"12345";
     
     return cell;
 }
@@ -79,4 +90,9 @@
     return header;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 68.f;
+}
+    
 @end

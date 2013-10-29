@@ -10,5 +10,16 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "-[RouteListDataSource tableView:cellForRowAtIndexPath:]:RouteListDataSource.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.lblRoute.text">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.section">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

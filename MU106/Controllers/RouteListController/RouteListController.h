@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RouteListController : UITableViewController
+    
+    @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end

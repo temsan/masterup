@@ -27,6 +27,10 @@
 {
     [super viewDidLoad];
 
+    [self.tableView registerNib:[UINib nibWithNibName:@"RouteListCell"
+                                               bundle:[NSBundle mainBundle]]
+                                forCellReuseIdentifier:@"RouteListCell"];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  

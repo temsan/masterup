@@ -14,4 +14,4 @@
     @property (weak, nonatomic) IBOutlet UILabel *lblRoute;
     @property (weak, nonatomic) IBOutlet UILabel *lblPrice;
 
-    @end
+@end

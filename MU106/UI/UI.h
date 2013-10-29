@@ -1,13 +1,14 @@
 //
-//  ViewController.h
+//  UI.h
 //  MU106
 //
 //  Created by Alex Lifantyev on 29.10.13.
 //  Copyright (c) 2013 Instup.com. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#ifndef MU106_UI_h
+#define MU106_UI_h
 
-@interface ViewController : UIViewController
+#import "RouteListCell/RouteListCell.h"
 
-@end
+#endif

@@ -7,9 +7,13 @@
 //
 
 #import "RouteListController.h"
+#import "UI.h"
 
 @interface RouteListController ()
 
+    @property (strong, nonatomic) NSMutableArray *modelRoutes;
+    @property (strong, nonatomic) NSMutableArray *modelFavoriteRoutes;
+    
 @end
 
 @implementation RouteListController
@@ -31,6 +35,14 @@
                                                bundle:[NSBundle mainBundle]]
                                 forCellReuseIdentifier:@"RouteListCell"];
     
+    self.modelRoutes = [[NSMutableArray alloc] init];
+    self.modelFavoriteRoutes = [[NSMutableArray alloc] init];
+    
+    for (int i=1; i<=10; i++) {
+        [self.modelRoutes addObject:[NSString stringWithFormat:@"%@ %d",NSLocalizedString(@"ROUTE", nil), i]];
+        [self.modelFavoriteRoutes addObject:[NSString stringWithFormat:@"%@ %d",NSLocalizedString(@"ROUTE", nil), i]];
+    }
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -43,8 +55,69 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-//#pragma mark - Table view data source
+    
+#pragma mark - Table view data source
+    
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2; //We have to groups: Starred and not starred
+}
+    
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    NSInteger rows;
+    if (section == 0) {
+        rows = self.modelFavoriteRoutes.count;
+    } else {
+        rows = self.modelRoutes.count;
+    }
+    return rows;
+}
+    
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"RouteListCell";
+    RouteListCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[RouteListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    //    if (cell == nil) {
+    //        //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"DynamicReportCell"];
+    //        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"RouteListCell" owner:self options:nil];
+    //        cell = [nib objectAtIndex:0];
+    //    }
+    
+    NSString *label;
+    
+    if (indexPath.section == 0) {
+        label = [self.modelFavoriteRoutes objectAtIndex:indexPath.row];
+    } else {
+        label = [self.modelRoutes objectAtIndex:indexPath.row];
+    }
+    cell.lblRoute.text = label;
+    cell.lblPrice.text = @"12345";
+    [cell.imgStarred setImage:[UIImage imageNamed:@"star_inactive"]];
+    
+    return cell;
+}
+    
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSString *header;
+    if (section == 0) {
+        header = NSLocalizedString(@"FAVORITES", nil);
+    } else {
+        header = NSLocalizedString(@"ROUTES", nil);
+    }
+    return header;
+}
+    
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 53.f;
+}
 
 /*
 // Override to support conditional editing of the table view.

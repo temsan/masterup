@@ -22,7 +22,6 @@
 		8F5408D6182002640099667C /* MU106Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5408D5182002640099667C /* MU106Tests.m */; };
 		8F5408E6182005D70099667C /* RouteListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5408E5182005D70099667C /* RouteListController.m */; };
 		8F5408EE182008430099667C /* RouteListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5408ED182008430099667C /* RouteListCell.m */; };
-		8F5408F318200A690099667C /* RouteListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5408F218200A690099667C /* RouteListDataSource.m */; };
 		8F5408FB1820107E0099667C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F5408FD1820107F0099667C /* Localizable.strings */; };
 		8FF7269418202172009E3D44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FF7269318202172009E3D44 /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -58,12 +57,9 @@
 		8F5408E0182004890099667C /* Controllers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Controllers.h; path = Controllers/Controllers.h; sourceTree = "<group>"; };
 		8F5408E4182005D70099667C /* RouteListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RouteListController.h; path = Controllers/RouteListController/RouteListController.h; sourceTree = "<group>"; };
 		8F5408E5182005D70099667C /* RouteListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RouteListController.m; path = Controllers/RouteListController/RouteListController.m; sourceTree = "<group>"; };
-		8F5408E9182006E50099667C /* DataSources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DataSources.h; path = DataSources/DataSources.h; sourceTree = "<group>"; };
 		8F5408EB182007ED0099667C /* UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UI.h; path = UI/UI.h; sourceTree = "<group>"; };
 		8F5408EC182008430099667C /* RouteListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RouteListCell.h; path = UI/RouteListCell/RouteListCell.h; sourceTree = "<group>"; };
 		8F5408ED182008430099667C /* RouteListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RouteListCell.m; path = UI/RouteListCell/RouteListCell.m; sourceTree = "<group>"; };
-		8F5408F118200A690099667C /* RouteListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RouteListDataSource.h; path = DataSources/RouteListDataSource/RouteListDataSource.h; sourceTree = "<group>"; };
-		8F5408F218200A690099667C /* RouteListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RouteListDataSource.m; path = DataSources/RouteListDataSource/RouteListDataSource.m; sourceTree = "<group>"; };
 		8F5408F9182010520099667C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8F5408FA182010520099667C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8F5408FE182010870099667C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -129,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				8F5408DF1820046A0099667C /* Controllers */,
-				8F5408E8182006C10099667C /* DataSources */,
 				8F5408EA182007D50099667C /* UI */,
 				8F5408B9182002640099667C /* AppDelegate.h */,
 				8F5408BA182002640099667C /* AppDelegate.m */,
@@ -187,15 +182,6 @@
 			name = RouteListController;
 			sourceTree = "<group>";
 		};
-		8F5408E8182006C10099667C /* DataSources */ = {
-			isa = PBXGroup;
-			children = (
-				8F5408E9182006E50099667C /* DataSources.h */,
-				8F5408F418200A6D0099667C /* RouteListDataSource */,
-			);
-			name = DataSources;
-			sourceTree = "<group>";
-		};
 		8F5408EA182007D50099667C /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,15 +199,6 @@
 				8F4804E018202C44003B3085 /* RouteListCell.xib */,
 			);
 			name = RouteListCell;
-			sourceTree = "<group>";
-		};
-		8F5408F418200A6D0099667C /* RouteListDataSource */ = {
-			isa = PBXGroup;
-			children = (
-				8F5408F118200A690099667C /* RouteListDataSource.h */,
-				8F5408F218200A690099667C /* RouteListDataSource.m */,
-			);
-			name = RouteListDataSource;
 			sourceTree = "<group>";
 		};
 		8F5408F518200E420099667C /* Resources */ = {
@@ -333,7 +310,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F5408F318200A690099667C /* RouteListDataSource.m in Sources */,
 				8F5408EE182008430099667C /* RouteListCell.m in Sources */,
 				8F5408BB182002640099667C /* AppDelegate.m in Sources */,
 				8F5408B7182002640099667C /* main.m in Sources */,

@@ -13,17 +13,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RouteListCell" rowHeight="57" id="H6G-Qd-Oiq" customClass="RouteListCell">
-                                <rect key="frame" x="0.0" y="119" width="320" height="57"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RouteListCell" rowHeight="51" id="H6G-Qd-Oiq" customClass="RouteListCell">
+                                <rect key="frame" x="0.0" y="119" width="320" height="51"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H6G-Qd-Oiq" id="nCh-EI-VZS">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="6q8-rH-56P" id="Ygi-IS-AxL"/>
+                            <outlet property="dataSource" destination="d3w-Wl-nyN" id="JHM-he-nH6"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="IX8-xe-ikY"/>
@@ -32,7 +32,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="byU-Z6-AxX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="6q8-rH-56P" customClass="RouteListDataSource"/>
             </objects>
             <point key="canvasLocation" x="662" y="60"/>
         </scene>

@@ -22,7 +22,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        [self setTitle:NSLocalizedString(@"ALL ROUTES", nil)];
+        [self.navigationItem setTitle:NSLocalizedString(@"ALL ROUTES", nil)];
     }
     return self;
 }
@@ -31,9 +31,9 @@
 {
     [super viewDidLoad];
 
-    [self.tableView registerNib:[UINib nibWithNibName:@"RouteListCell"
-                                               bundle:[NSBundle mainBundle]]
-                                forCellReuseIdentifier:@"RouteListCell"];
+//    [self.tableView registerNib:[UINib nibWithNibName:@"RouteListCell"
+//                                               bundle:[NSBundle mainBundle]]
+//                                forCellReuseIdentifier:@"RouteListCell"];
     
     self.modelRoutes = [[NSMutableArray alloc] init];
     self.modelFavoriteRoutes = [[NSMutableArray alloc] init];
@@ -79,9 +79,9 @@
     static NSString *CellIdentifier = @"RouteListCell";
     RouteListCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    if (cell == nil) {
-        cell = [[RouteListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
+//    if (cell == nil) {
+//        cell = [[RouteListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+//    }
     
     //    if (cell == nil) {
     //        //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"DynamicReportCell"];
@@ -96,8 +96,9 @@
     } else {
         label = [self.modelRoutes objectAtIndex:indexPath.row];
     }
+    NSNumber *price = [NSNumber numberWithLong: random()%30];
     cell.lblRoute.text = label;
-    cell.lblPrice.text = @"12345";
+    cell.lblPrice.text = [NSString stringWithFormat:@"%@ руб.", price];
     [cell.imgStarred setImage:[UIImage imageNamed:@"star_inactive"]];
     
     return cell;

@@ -22,7 +22,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        [self.navigationItem setTitle:NSLocalizedString(@"ALL ROUTES", nil)];
+        //
     }
     return self;
 }
@@ -30,11 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-//    [self.tableView registerNib:[UINib nibWithNibName:@"RouteListCell"
-//                                               bundle:[NSBundle mainBundle]]
-//                                forCellReuseIdentifier:@"RouteListCell"];
     
+    [self.navigationItem setTitle:NSLocalizedString(@"ALL ROUTES", nil)];
     self.modelRoutes = [[NSMutableArray alloc] init];
     self.modelFavoriteRoutes = [[NSMutableArray alloc] init];
     
@@ -79,27 +76,25 @@
     static NSString *CellIdentifier = @"RouteListCell";
     RouteListCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-//    if (cell == nil) {
-//        cell = [[RouteListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//    }
-    
-    //    if (cell == nil) {
-    //        //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"DynamicReportCell"];
-    //        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"RouteListCell" owner:self options:nil];
-    //        cell = [nib objectAtIndex:0];
-    //    }
-    
     NSString *label;
-    
+    UIImage *imgStar;
     if (indexPath.section == 0) {
         label = [self.modelFavoriteRoutes objectAtIndex:indexPath.row];
+        cell.tag = 1;
     } else {
         label = [self.modelRoutes objectAtIndex:indexPath.row];
+        cell.tag = 0;
     }
-    NSNumber *price = [NSNumber numberWithLong: random()%30];
+    
+    if (cell.tag == 0) {
+        imgStar = [UIImage imageNamed:@"star_inactive"];
+    } else {
+        imgStar = [UIImage imageNamed:@"star_active"];
+    }
+    NSNumber *price = [NSNumber numberWithLong: random()%30+1];
     cell.lblRoute.text = label;
-    cell.lblPrice.text = [NSString stringWithFormat:@"%@ руб.", price];
-    [cell.imgStarred setImage:[UIImage imageNamed:@"star_inactive"]];
+    cell.lblPrice.text = [NSString stringWithFormat:@"%@ %@", price, NSLocalizedString(@"SHORT CURRENCY", nil)];
+    [cell.imgStarred setImage:imgStar];
     
     return cell;
 }
@@ -114,9 +109,22 @@
     }
     return header;
 }
+
+#pragma mark - Table view delegate
+    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    RouteListCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if (cell.tag == 1) {
+        NSLog(@"HIGHLITED !!!");
+    } else {
+        NSLog(@" NOT HIGHLITED !!!");
+    }
+}
     
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //Height of cell in Storyboard
     return 53.f;
 }
 

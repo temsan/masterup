@@ -8,6 +8,7 @@
 
 /* User Interface*/
 "ALL ROUTES" = "Все маршруты";
+"SHORT CURRENCY" = "руб.";
 "FAVORITES" = "Избранные";
 "PRICE" = "Цена";
 "ROUTE" = "Маршрут";

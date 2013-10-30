@@ -3,6 +3,17 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[RouteListController tableView:didSelectRowAtIndexPath:]:RouteListController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.imgStarred.highlighted ">
+            </PersistentString>
+            <PersistentString
+               value = "cell.highlighted">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[RouteListDataSource init]:RouteListDataSource.m">
          <PersistentStrings>
             <PersistentString

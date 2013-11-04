@@ -10,5 +10,7 @@
 #define MU106_Controllers_h
 
 #import "RouteListController/RouteListController.h"
+#import "SidePanelController/SidePanelController.h"
+#import "CenterController/CenterController.h"
 
 #endif

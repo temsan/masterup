@@ -114,7 +114,7 @@
     
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    RouteListCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    RouteListCell *cell = (RouteListCell *)[tableView cellForRowAtIndexPath:indexPath];
     if (cell.tag == 1) {
         NSLog(@"HIGHLITED !!!");
     } else {

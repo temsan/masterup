@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CenterController : UINavigationController
+@interface CenterController : UIViewController
+
+- (IBAction)viewFavorites:(id)sender;
 
 @end

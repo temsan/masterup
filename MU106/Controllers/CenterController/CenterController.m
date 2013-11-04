@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self.navigationItem setTitle:NSLocalizedString(@"ALL ROUTES", nil)];
+    //[self.navigationItem setTitle:NSLocalizedString(@"ALL ROUTES", nil)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,4 +36,6 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)viewFavorites:(id)sender {
+}
 @end

@@ -14,7 +14,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RouteListCell" rowHeight="53" id="H6G-Qd-Oiq" customClass="RouteListCell">
-                                <rect key="frame" x="0.0" y="119" width="320" height="53"/>
+                                <rect key="frame" x="0.0" y="55" width="320" height="53"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H6G-Qd-Oiq" id="nCh-EI-VZS">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
@@ -57,7 +57,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="byU-Z6-AxX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="99" y="-264"/>
+            <point key="canvasLocation" x="-495" y="-102"/>
         </scene>
         <!--Side Panel Controller-->
         <scene sceneID="VDP-mQ-VSB">
@@ -75,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x8H-cV-bta" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71" y="506"/>
+            <point key="canvasLocation" x="-15" y="-102"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eGg-rh-W3m">
@@ -90,7 +90,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f94-3m-CCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="496" y="506"/>
+            <point key="canvasLocation" x="442" y="-102"/>
         </scene>
         <!--View Controller - Favorites-->
         <scene sceneID="jzW-bY-P3N">
@@ -109,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COU-NY-CGR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="954" y="-248"/>
+            <point key="canvasLocation" x="1346" y="-102"/>
         </scene>
         <!--Center Controller-->
         <scene sceneID="aGa-Id-vJx">
@@ -144,22 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L8s-K8-60N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="956" y="506"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="UTz-aV-Hs6">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="STR-xM-Shk" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ysc-Wl-UE9">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="d3w-Wl-nyN" kind="relationship" relationship="rootViewController" id="7DF-xg-znc"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mve-hE-LH1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-482" y="50"/>
+            <point key="canvasLocation" x="898" y="-102"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

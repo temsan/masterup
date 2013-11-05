@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>73526C61-487E-4743-AC77-0D79A13AA836</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MU106</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6BD343F8-4AAF-4470-8719-6971B2E1D97C</key>
+		<string>https://github.com/lial/masterup.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MU106.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6BD343F8-4AAF-4470-8719-6971B2E1D97C</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/lial/masterup.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6BD343F8-4AAF-4470-8719-6971B2E1D97C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6BD343F8-4AAF-4470-8719-6971B2E1D97C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MU106</string>
+		</dict>
+	</array>
+</dict>
+</plist>

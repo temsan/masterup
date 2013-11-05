@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4FCEF3F877AB4352B87ED7CB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D93EAD705E6F43979638A009 /* libPods.a */; };
 		8F1D8F421827EAAB005B1199 /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1D8F411827EAAB005B1199 /* JASidePanelController.m */; };
 		8F1D8F491827EF80005B1199 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1D8F481827EF80005B1199 /* QuartzCore.framework */; };
 		8F1D8F4C1827F083005B1199 /* SidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1D8F4B1827F083005B1199 /* SidePanelController.m */; };
@@ -27,6 +28,7 @@
 		8F5408E6182005D70099667C /* RouteListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5408E5182005D70099667C /* RouteListController.m */; };
 		8F5408EE182008430099667C /* RouteListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5408ED182008430099667C /* RouteListCell.m */; };
 		8F5408FB1820107E0099667C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F5408FD1820107F0099667C /* Localizable.strings */; };
+		8F75BC621829699700643E62 /* ApiRouteClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F75BC611829699700643E62 /* ApiRouteClient.m */; };
 		8FF7269418202172009E3D44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FF7269318202172009E3D44 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2DF3CCA67428454C91868C83 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		8F1D8F401827EAAB005B1199 /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
 		8F1D8F411827EAAB005B1199 /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASidePanelController.m; sourceTree = "<group>"; };
 		8F1D8F431827EACA005B1199 /* External.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = External.h; path = External/External.h; sourceTree = "<group>"; };
@@ -78,7 +81,13 @@
 		8F5408FA182010520099667C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8F5408FE182010870099667C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8F5408FF182010880099667C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8F75BC5918294F3D00643E62 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		8F75BC5B18294F4500643E62 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8F75BC5F1829695600643E62 /* Api.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Api.h; path = Api/Api.h; sourceTree = "<group>"; };
+		8F75BC601829699700643E62 /* ApiRouteClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApiRouteClient.h; path = Api/ApiRouteClient/ApiRouteClient.h; sourceTree = "<group>"; };
+		8F75BC611829699700643E62 /* ApiRouteClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApiRouteClient.m; path = Api/ApiRouteClient/ApiRouteClient.m; sourceTree = "<group>"; };
 		8FF7269318202172009E3D44 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D93EAD705E6F43979638A009 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +99,7 @@
 				8F5408AD182002640099667C /* CoreGraphics.framework in Frameworks */,
 				8F5408AF182002640099667C /* UIKit.framework in Frameworks */,
 				8F5408AB182002640099667C /* Foundation.framework in Frameworks */,
+				4FCEF3F877AB4352B87ED7CB /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +178,7 @@
 				8F5408CF182002640099667C /* MU106Tests */,
 				8F5408A9182002640099667C /* Frameworks */,
 				8F5408A8182002640099667C /* Products */,
+				2DF3CCA67428454C91868C83 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,11 +194,14 @@
 		8F5408A9182002640099667C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8F75BC5B18294F4500643E62 /* SystemConfiguration.framework */,
+				8F75BC5918294F3D00643E62 /* MobileCoreServices.framework */,
 				8F1D8F481827EF80005B1199 /* QuartzCore.framework */,
 				8F5408AA182002640099667C /* Foundation.framework */,
 				8F5408AC182002640099667C /* CoreGraphics.framework */,
 				8F5408AE182002640099667C /* UIKit.framework */,
 				8F5408C9182002640099667C /* XCTest.framework */,
+				D93EAD705E6F43979638A009 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -195,6 +209,7 @@
 		8F5408B0182002640099667C /* MU106 */ = {
 			isa = PBXGroup;
 			children = (
+				8F75BC5E1829691F00643E62 /* Api */,
 				8F1D8F3D1827E98B005B1199 /* External */,
 				8F4804E21820FFB5003B3085 /* Classes */,
 				8F5408DF1820046A0099667C /* Controllers */,
@@ -284,6 +299,24 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		8F75BC5E1829691F00643E62 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				8F75BC5F1829695600643E62 /* Api.h */,
+				8F75BC631829699B00643E62 /* ApiRouteClient */,
+			);
+			name = Api;
+			sourceTree = "<group>";
+		};
+		8F75BC631829699B00643E62 /* ApiRouteClient */ = {
+			isa = PBXGroup;
+			children = (
+				8F75BC601829699700643E62 /* ApiRouteClient.h */,
+				8F75BC611829699700643E62 /* ApiRouteClient.m */,
+			);
+			name = ApiRouteClient;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -291,9 +324,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8F5408D9182002640099667C /* Build configuration list for PBXNativeTarget "MU106" */;
 			buildPhases = (
+				0E31E5DA607145C69D1EF351 /* Check Pods Manifest.lock */,
 				8F5408A3182002640099667C /* Sources */,
 				8F5408A4182002640099667C /* Frameworks */,
 				8F5408A5182002640099667C /* Resources */,
+				C8F67CABAFD0417DA8A8A642 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -378,6 +413,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E31E5DA607145C69D1EF351 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C8F67CABAFD0417DA8A8A642 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8F5408A3182002640099667C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -391,6 +459,7 @@
 				8F5408BB182002640099667C /* AppDelegate.m in Sources */,
 				8F5408B7182002640099667C /* main.m in Sources */,
 				8F5408E6182005D70099667C /* RouteListController.m in Sources */,
+				8F75BC621829699700643E62 /* ApiRouteClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +586,7 @@
 		};
 		8F5408DA182002640099667C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DF3CCA67428454C91868C83 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -530,6 +600,7 @@
 		};
 		8F5408DB182002640099667C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DF3CCA67428454C91868C83 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

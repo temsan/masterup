@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Api.h"
+#import "Classes.h"
 
-@interface RouteListController : UITableViewController
+@interface RouteListController : UITableViewController <ApiRouteClientDelegate>
     
     @property (strong, nonatomic) IBOutlet UITableView *tableView;
 

@@ -31,14 +31,19 @@
 {
     [super viewDidLoad];
     
+    ApiRouteClient *sharedRouteClient = [ApiRouteClient sharedInstance];
+    sharedRouteClient.delegate = self;
+    [sharedRouteClient updateRoutesList];
+    
     [self.navigationItem setTitle:NSLocalizedString(@"ALL ROUTES", nil)];
     self.modelRoutes = [[NSMutableArray alloc] init];
     self.modelFavoriteRoutes = [[NSMutableArray alloc] init];
     
-    for (int i=1; i<=10; i++) {
-        [self.modelRoutes addObject:[NSString stringWithFormat:@"%@ %d",NSLocalizedString(@"ROUTE", nil), i]];
-        [self.modelFavoriteRoutes addObject:[NSString stringWithFormat:@"%@ %d",NSLocalizedString(@"ROUTE", nil), i]];
-    }
+    
+//    for (int i=1; i<=10; i++) {
+//        [self.modelRoutes addObject:[NSString stringWithFormat:@"%@ %d",NSLocalizedString(@"ROUTE", nil), i]];
+//        [self.modelFavoriteRoutes addObject:[NSString stringWithFormat:@"%@ %d",NSLocalizedString(@"ROUTE", nil), i]];
+//    }
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -76,24 +81,19 @@
     static NSString *CellIdentifier = @"RouteListCell";
     RouteListCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    NSString *label;
+    Route *obj = [self.modelRoutes objectAtIndex:indexPath.row];
     UIImage *imgStar;
-    if (indexPath.section == 0) {
-        label = [self.modelFavoriteRoutes objectAtIndex:indexPath.row];
+    if (obj.isStarred) {
+        imgStar = [UIImage imageNamed:@"star_active"];
         cell.tag = 1;
     } else {
-        label = [self.modelRoutes objectAtIndex:indexPath.row];
+        imgStar = [UIImage imageNamed:@"star_inactive"];
         cell.tag = 0;
     }
     
-    if (cell.tag == 0) {
-        imgStar = [UIImage imageNamed:@"star_inactive"];
-    } else {
-        imgStar = [UIImage imageNamed:@"star_active"];
-    }
-    NSNumber *price = [NSNumber numberWithLong: random()%30+1];
-    cell.lblRoute.text = label;
-    cell.lblPrice.text = [NSString stringWithFormat:@"%@ %@", price, NSLocalizedString(@"SHORT CURRENCY", nil)];
+    //NSNumber *price = [NSNumber numberWithLong: random()%30+1];
+    cell.lblRoute.text = obj.title;
+    cell.lblPrice.text = [NSString stringWithFormat:@"%@ %@", obj.price, NSLocalizedString(@"SHORT CURRENCY", nil)];
     [cell.imgStarred setImage:imgStar];
     
     return cell;
@@ -116,9 +116,9 @@
 {
     RouteListCell *cell = (RouteListCell *)[tableView cellForRowAtIndexPath:indexPath];
     if (cell.tag == 1) {
-        NSLog(@"HIGHLITED !!!");
+        //NSLog(@"HIGHLITED !!!");
     } else {
-        NSLog(@" NOT HIGHLITED !!!");
+        //NSLog(@" NOT HIGHLITED !!!");
     }
 }
     
@@ -126,6 +126,31 @@
 {
     //Height of cell in Storyboard
     return 53.f;
+}
+
+#pragma mark - ApiRouteClient delegate
+
+- (void)ApiRouteClient:(ApiRouteClient *)client didUpdateRoutes:(id)routes
+{
+    //NSError *error = nil;
+    //NSData *data = [routes dataUsingEncoding:NSUTF8StringEncoding];
+    //NSArray *array = [NSJSONSerialization JSONObjectWithData:routes options:kNilOptions error:&error];
+    //NSLog(@"Response API %@", routes);
+    NSEnumerator *enumerator = [routes objectEnumerator];
+    id obj;
+    while ((obj = [enumerator nextObject]))
+    {
+        Route *route = [[Route alloc] initWithDictionary:(NSDictionary *)obj];
+        [self.modelRoutes addObject:route];
+        [self.tableView reloadData];
+        //NSLog(@"Route obj = %@", route);
+        
+    }
+}
+
+- (void)ApiRouteClient:(ApiRouteClient *)client didFailWithError:(NSError *)error
+{
+    NSLog(@"Error API %@", error.description);
 }
 
 /*

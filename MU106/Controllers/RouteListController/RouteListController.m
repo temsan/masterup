@@ -62,17 +62,17 @@
     
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2; //We have to groups: Starred and not starred
+    return 1; //We have to groups: Starred and not starred
 }
     
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSInteger rows;
-    if (section == 0) {
-        rows = self.modelFavoriteRoutes.count;
-    } else {
+    //if (section == 0) {
+    //    rows = self.modelFavoriteRoutes.count;
+    //} else {
         rows = self.modelRoutes.count;
-    }
+    //}
     return rows;
 }
     
@@ -91,9 +91,9 @@
         cell.tag = 0;
     }
     
-    //NSNumber *price = [NSNumber numberWithLong: random()%30+1];
     cell.lblRoute.text = obj.title;
     cell.lblPrice.text = [NSString stringWithFormat:@"%@ %@", obj.price, NSLocalizedString(@"SHORT CURRENCY", nil)];
+    cell.lblDescription.text = obj.description;
     [cell.imgStarred setImage:imgStar];
     
     return cell;
@@ -132,10 +132,6 @@
 
 - (void)ApiRouteClient:(ApiRouteClient *)client didUpdateRoutes:(id)routes
 {
-    //NSError *error = nil;
-    //NSData *data = [routes dataUsingEncoding:NSUTF8StringEncoding];
-    //NSArray *array = [NSJSONSerialization JSONObjectWithData:routes options:kNilOptions error:&error];
-    //NSLog(@"Response API %@", routes);
     NSEnumerator *enumerator = [routes objectEnumerator];
     id obj;
     while ((obj = [enumerator nextObject]))
@@ -143,7 +139,6 @@
         Route *route = [[Route alloc] initWithDictionary:(NSDictionary *)obj];
         [self.modelRoutes addObject:route];
         [self.tableView reloadData];
-        //NSLog(@"Route obj = %@", route);
         
     }
 }

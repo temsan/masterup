@@ -28,7 +28,7 @@
 {
     self = [super initWithBaseURL:url];
     if (self) {
-        //[self setDefaultHeader:@"x-api-token" value:BeersAPIToken];
+        //[self setDefaultHeader:@"x-api-token" value:APIToken];
         [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
         [self setDefaultHeader:@"Accept" value:@"application/json"];
     } else {

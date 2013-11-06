@@ -13,5 +13,6 @@
     @property (weak, nonatomic) IBOutlet UIImageView *imgStarred;
     @property (weak, nonatomic) IBOutlet UILabel *lblRoute;
     @property (weak, nonatomic) IBOutlet UILabel *lblPrice;
+    @property (weak, nonatomic) IBOutlet UILabel *lblDescription;
 
 @end

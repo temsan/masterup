@@ -30,6 +30,7 @@
 		8F5408FB1820107E0099667C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F5408FD1820107F0099667C /* Localizable.strings */; };
 		8F75BC621829699700643E62 /* ApiRouteClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F75BC611829699700643E62 /* ApiRouteClient.m */; };
 		8FF7269418202172009E3D44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FF7269318202172009E3D44 /* Main.storyboard */; };
+		B047EF46183404C30065DF8B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B047EF45183404C30065DF8B /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		8F75BC601829699700643E62 /* ApiRouteClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApiRouteClient.h; path = Api/ApiRouteClient/ApiRouteClient.h; sourceTree = "<group>"; };
 		8F75BC611829699700643E62 /* ApiRouteClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApiRouteClient.m; path = Api/ApiRouteClient/ApiRouteClient.m; sourceTree = "<group>"; };
 		8FF7269318202172009E3D44 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B047EF45183404C30065DF8B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D93EAD705E6F43979638A009 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B047EF46183404C30065DF8B /* MapKit.framework in Frameworks */,
 				8F1D8F491827EF80005B1199 /* QuartzCore.framework in Frameworks */,
 				8F5408AD182002640099667C /* CoreGraphics.framework in Frameworks */,
 				8F5408AF182002640099667C /* UIKit.framework in Frameworks */,
@@ -197,6 +200,7 @@
 		8F5408A9182002640099667C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B047EF45183404C30065DF8B /* MapKit.framework */,
 				8F75BC5B18294F4500643E62 /* SystemConfiguration.framework */,
 				8F75BC5918294F3D00643E62 /* MobileCoreServices.framework */,
 				8F1D8F481827EF80005B1199 /* QuartzCore.framework */,

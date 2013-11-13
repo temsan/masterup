@@ -7,6 +7,8 @@
 //
 
 #import "SidePanelController.h"
+#import "RouteListController.h"
+#import "CenterController.h"
 
 @interface SidePanelController ()
 
@@ -37,8 +39,16 @@
 
 -(void) awakeFromNib
 {
-    [self setLeftPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"RouteListID"]];
-    [self setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"CenterID"]];
+    
+    RouteListController *routePanel = [self.storyboard instantiateViewControllerWithIdentifier:@"RouteListID"];
+    [self setLeftPanel:routePanel];
+    
+    CenterController *centerView = [self.storyboard instantiateViewControllerWithIdentifier:@"CenterID"];
+    [self setCenterPanel:centerView];
+    
+    routePanel.centerView = centerView;
+//    centerView.sidePanel = routePanel;
+    
     //[self setRightPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"rightViewController"]];
 }
 

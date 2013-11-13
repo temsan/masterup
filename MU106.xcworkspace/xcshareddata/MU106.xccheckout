@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>73526C61-487E-4743-AC77-0D79A13AA836</string>
+	<string>7DA4AC76-5663-49FD-A0C7-D6863789205F</string>
 	<key>IDESourceControlProjectName</key>
 	<string>MU106</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>6BD343F8-4AAF-4470-8719-6971B2E1D97C</key>
-		<string>https://github.com/lial/masterup.git</string>
+		<key>64E655C7-25C2-4D15-8163-E353014700B9</key>
+		<string>https://github.com/temsan/masterup.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MU106.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>6BD343F8-4AAF-4470-8719-6971B2E1D97C</key>
+		<key>64E655C7-25C2-4D15-8163-E353014700B9</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/lial/masterup.git</string>
+	<string>https://github.com/temsan/masterup.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>6BD343F8-4AAF-4470-8719-6971B2E1D97C</string>
+	<string>64E655C7-25C2-4D15-8163-E353014700B9</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>6BD343F8-4AAF-4470-8719-6971B2E1D97C</string>
+			<string>64E655C7-25C2-4D15-8163-E353014700B9</string>
 			<key>IDESourceControlWCCName</key>
-			<string>MU106</string>
+			<string>masterup-master</string>
 		</dict>
 	</array>
 </dict>

@@ -10,20 +10,23 @@
 
 @protocol ApiRouteClientDelegate;
 
+
 @interface ApiRouteClient : AFHTTPClient
 
-@property (weak) id<ApiRouteClientDelegate> delegate;
+    @property (weak) id<ApiRouteClientDelegate> delegate;
 
-+ (id)sharedInstance;
-- (id)initWithBaseURL:(NSURL *)url;
+    + (id)sharedInstance;
+    - (id)initWithBaseURL:(NSURL *)url;
 
-- (void)updateRoutesList;
+- (void)updateRoutesList:(void (^)(NSArray *routes)) successBlock Failure:(void (^)(NSError *errorr)) failureBlock;
 
 @end
 
+
+
 @protocol ApiRouteClientDelegate <NSObject>
 
--(void)ApiRouteClient:(ApiRouteClient *)client didUpdateRoutes:(id)routes;
--(void)ApiRouteClient:(ApiRouteClient *)client didFailWithError:(NSError *)error;
+    -(void)ApiRouteClient:(ApiRouteClient *)client didUpdateRoutes:(NSMutableArray *)routes;
+    -(void)ApiRouteClient:(ApiRouteClient *)client didFailWithError:(NSError *)error;
 
 @end

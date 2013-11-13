@@ -7,13 +7,15 @@
 //
 
 #import "RouteListController.h"
+#import "SidePanelController.h"
+#import "CenterController.h"
 #import "UI.h"
 
 @interface RouteListController ()
 
     @property (strong, nonatomic) NSMutableArray *modelRoutes;
     @property (strong, nonatomic) NSMutableArray *modelFavoriteRoutes;
-    
+
 @end
 
 @implementation RouteListController
@@ -32,24 +34,35 @@
     [super viewDidLoad];
     
     ApiRouteClient *sharedRouteClient = [ApiRouteClient sharedInstance];
+
     sharedRouteClient.delegate = self;
-    [sharedRouteClient updateRoutesList];
+    
+    [sharedRouteClient updateRoutesList:^(NSArray *routes) {
+        
+        NSEnumerator *enumerator = [routes objectEnumerator];
+        id obj;
+        
+        while ((obj = [enumerator nextObject]))
+        {
+            Route *route = [[Route alloc] initWithDictionary:(NSDictionary *)obj];
+            [self.modelRoutes addObject:route];
+
+            
+        }
+        [self.tableView reloadData];
+
+    }
+    
+    Failure:^(NSError *error) {
+        NSLog(@"%@", error);
+    }
+    ];
+    
     
     [self.navigationItem setTitle:NSLocalizedString(@"ALL ROUTES", nil)];
     self.modelRoutes = [[NSMutableArray alloc] init];
     self.modelFavoriteRoutes = [[NSMutableArray alloc] init];
     
-    
-//    for (int i=1; i<=10; i++) {
-//        [self.modelRoutes addObject:[NSString stringWithFormat:@"%@ %d",NSLocalizedString(@"ROUTE", nil), i]];
-//        [self.modelFavoriteRoutes addObject:[NSString stringWithFormat:@"%@ %d",NSLocalizedString(@"ROUTE", nil), i]];
-//    }
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,11 +91,20 @@
     
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row == 0){
+        
+        UITableViewCell *searchCell = [tableView dequeueReusableCellWithIdentifier:@"SearchCell"];
+        return searchCell;
+        
+    }
+    
     static NSString *CellIdentifier = @"RouteListCell";
     RouteListCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    Route *obj = [self.modelRoutes objectAtIndex:indexPath.row];
+    Route *obj = [self.modelRoutes objectAtIndex:indexPath.row + 1];
+    
     UIImage *imgStar;
+    
     if (obj.isStarred) {
         imgStar = [UIImage imageNamed:@"star_active"];
         cell.tag = 1;
@@ -110,6 +132,13 @@
     return header;
 }
 
+- (void) updateTable
+{
+
+    [self.tableView reloadData];
+}
+
+
 #pragma mark - Table view delegate
     
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -120,6 +149,13 @@
     } else {
         //NSLog(@" NOT HIGHLITED !!!");
     }
+    
+    UINavigationController *navigationController = self.centerView;
+    CenterController *centerView = [navigationController.viewControllers objectAtIndex:0];
+    centerView.navigationItem.title = cell.lblRoute.text;
+    
+    centerView.currentRoute = [self.modelRoutes objectAtIndex:indexPath.row + 1];
+    [centerView updateRightBarButton];
 }
     
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -132,15 +168,7 @@
 
 - (void)ApiRouteClient:(ApiRouteClient *)client didUpdateRoutes:(id)routes
 {
-    NSEnumerator *enumerator = [routes objectEnumerator];
-    id obj;
-    while ((obj = [enumerator nextObject]))
-    {
-        Route *route = [[Route alloc] initWithDictionary:(NSDictionary *)obj];
-        [self.modelRoutes addObject:route];
-        [self.tableView reloadData];
-        
-    }
+    
 }
 
 - (void)ApiRouteClient:(ApiRouteClient *)client didFailWithError:(NSError *)error

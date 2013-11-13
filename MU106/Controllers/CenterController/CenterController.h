@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Route.h"
+#import "RouteListController.h"
 
 @interface CenterController : UIViewController
 
-- (IBAction)viewFavorites:(id)sender;
+@property (strong, nonatomic) Route *currentRoute;
+@property (strong, nonatomic) RouteListController *sidePanel;
+
+- (IBAction)addToFavorites:(id)sender;
+
+- (void) updateRightBarButton;
 
 @end

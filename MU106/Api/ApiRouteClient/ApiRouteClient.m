@@ -8,6 +8,7 @@
 
 #import "ApiRouteClient.h"
 #import "AFNetworking.h"
+#import <dispatch/dispatch.h>
 
 #define kApiBaseUrl @"http://itomy.ch/"
 
@@ -38,23 +39,30 @@
     return self;
 }
 
-- (void)updateRoutesList
+- (void)updateRoutesList:(void (^)(NSArray *))successBlock Failure:(void (^)(NSError *))failureBlock
 {
-    //NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    //[parameters setObject:@"json" forKey:@"format"];
     
-    [self getPath:@"routes.php"
-       parameters:nil
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              if([self.delegate respondsToSelector:@selector(ApiRouteClient:didUpdateRoutes:)])
-                  [self.delegate ApiRouteClient:self didUpdateRoutes:responseObject];
-          }
-          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              if([self.delegate respondsToSelector:@selector(ApiRouteClient:didFailWithError:)])
-                  [self.delegate ApiRouteClient:self didFailWithError:error];
-          }
-     ];
+    dispatch_queue_t myQueue;
+    myQueue = dispatch_queue_create("loadData", NULL);
+    
+    dispatch_async(myQueue, ^(void){
+        
+        [self getPath:@"routes.php"
+           parameters:nil
+              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                  
+                  successBlock((NSArray *)responseObject);
+              }
+              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                  failureBlock(error);
+              }
+         ];
 
+    });
+    
+    
+    //dispatch_release(myQueue);
+    
 }
 
 @end

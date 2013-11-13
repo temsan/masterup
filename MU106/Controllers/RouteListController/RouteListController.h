@@ -14,4 +14,9 @@
     
     @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
+    @property (strong, nonatomic) NSString *currentRoutTitle;
+    @property (strong, nonatomic) UINavigationController *centerView;
+
+- (void) updateTable;
+
 @end

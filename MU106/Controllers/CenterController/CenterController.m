@@ -7,10 +7,13 @@
 //
 
 #import "CenterController.h"
+#import "SidePanelController.h"
 
 @interface CenterController ()
 
 @end
+
+
 
 @implementation CenterController
 
@@ -26,7 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    [self updateRightBarButton];
+    // Do any additional setup after loading the view.
     //[self.navigationItem setTitle:NSLocalizedString(@"ALL ROUTES", nil)];
 }
 
@@ -36,6 +41,35 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)viewFavorites:(id)sender {
+- (void) updateRightBarButton
+{
+
+    if (_currentRoute.isStarred) {
+        self.navigationItem.rightBarButtonItem.image = [UIImage imageNamed:@"star_active"];
+    } else {
+        self.navigationItem.rightBarButtonItem.image = [UIImage imageNamed:@"star_inactive"];
+
+    }
+
 }
+
+- (IBAction)addToFavorites:(id)sender {
+    
+    self.currentRoute.isStarred = !self.currentRoute.isStarred;
+    [self updateRightBarButton];
+    [self.sidePanel updateViewConstraints];
+    
+//    SidePanelController *leftPanel = self.parentViewController.leftPanel;
+//    [leftPanel reloadData];
+    
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+//                                                    message:@"Added to favorites!"
+//                                                   delegate:self
+//                                          cancelButtonTitle:@"OK"
+//                                          otherButtonTitles:nil];
+//    [alert show];
+    
+}
+
+
 @end

@@ -31,6 +31,9 @@
 		8F75BC621829699700643E62 /* ApiRouteClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F75BC611829699700643E62 /* ApiRouteClient.m */; };
 		8FF7269418202172009E3D44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FF7269318202172009E3D44 /* Main.storyboard */; };
 		B047EF46183404C30065DF8B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B047EF45183404C30065DF8B /* MapKit.framework */; };
+		B0DFA017183909580092C6A3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DFA016183909580092C6A3 /* CoreData.framework */; };
+		B0DFA01B183913920092C6A3 /* Marshrutki.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0DFA019183913920092C6A3 /* Marshrutki.xcdatamodeld */; };
+		B0DFA01D18391F080092C6A3 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DFA01C18391F080092C6A3 /* CoreAudio.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +92,9 @@
 		8F75BC611829699700643E62 /* ApiRouteClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApiRouteClient.m; path = Api/ApiRouteClient/ApiRouteClient.m; sourceTree = "<group>"; };
 		8FF7269318202172009E3D44 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B047EF45183404C30065DF8B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B0DFA016183909580092C6A3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B0DFA01A183913920092C6A3 /* Marshrutki.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Marshrutki.xcdatamodel; sourceTree = "<group>"; };
+		B0DFA01C18391F080092C6A3 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		D93EAD705E6F43979638A009 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -97,6 +103,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0DFA01D18391F080092C6A3 /* CoreAudio.framework in Frameworks */,
+				B0DFA017183909580092C6A3 /* CoreData.framework in Frameworks */,
 				B047EF46183404C30065DF8B /* MapKit.framework in Frameworks */,
 				8F1D8F491827EF80005B1199 /* QuartzCore.framework in Frameworks */,
 				8F5408AD182002640099667C /* CoreGraphics.framework in Frameworks */,
@@ -142,8 +150,8 @@
 		8F1D8F4D1827F087005B1199 /* SidePanelController */ = {
 			isa = PBXGroup;
 			children = (
-				8F1D8F4A1827F083005B1199 /* SidePanelController.h */,
 				8F1D8F4B1827F083005B1199 /* SidePanelController.m */,
+				8F1D8F4A1827F083005B1199 /* SidePanelController.h */,
 			);
 			name = SidePanelController;
 			sourceTree = "<group>";
@@ -200,6 +208,8 @@
 		8F5408A9182002640099667C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B0DFA01C18391F080092C6A3 /* CoreAudio.framework */,
+				B0DFA016183909580092C6A3 /* CoreData.framework */,
 				B047EF45183404C30065DF8B /* MapKit.framework */,
 				8F75BC5B18294F4500643E62 /* SystemConfiguration.framework */,
 				8F75BC5918294F3D00643E62 /* MobileCoreServices.framework */,
@@ -216,6 +226,7 @@
 		8F5408B0182002640099667C /* MU106 */ = {
 			isa = PBXGroup;
 			children = (
+				B0DFA0181839135A0092C6A3 /* CoreData */,
 				8F75BC5E1829691F00643E62 /* Api */,
 				8F4804E21820FFB5003B3085 /* Classes */,
 				8F5408DF1820046A0099667C /* Controllers */,
@@ -320,6 +331,14 @@
 				8F75BC611829699700643E62 /* ApiRouteClient.m */,
 			);
 			name = ApiRouteClient;
+			sourceTree = "<group>";
+		};
+		B0DFA0181839135A0092C6A3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B0DFA019183913920092C6A3 /* Marshrutki.xcdatamodeld */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,6 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F4804E61820FFF5003B3085 /* Route.m in Sources */,
+				B0DFA01B183913920092C6A3 /* Marshrutki.xcdatamodeld in Sources */,
 				8F1D8F4C1827F083005B1199 /* SidePanelController.m in Sources */,
 				8F1D8F501827F163005B1199 /* CenterController.m in Sources */,
 				8F5408EE182008430099667C /* RouteListCell.m in Sources */,
@@ -690,6 +710,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B0DFA019183913920092C6A3 /* Marshrutki.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B0DFA01A183913920092C6A3 /* Marshrutki.xcdatamodel */,
+			);
+			currentVersion = B0DFA01A183913920092C6A3 /* Marshrutki.xcdatamodel */;
+			path = Marshrutki.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8F54089F182002640099667C /* Project object */;
 }

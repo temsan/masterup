@@ -6,8 +6,11 @@
 //  Copyright (c) 2013 Instup.com. All rights reserved.
 //
 
+#import <CoreAudio/CoreAudioTypes.h>
+
 #import "CenterController.h"
 #import "SidePanelController.h"
+
 
 @interface CenterController ()
 
@@ -54,7 +57,7 @@
 }
 
 - (IBAction)addToFavorites:(id)sender {
-    
+
     self.currentRoute.isStarred = !self.currentRoute.isStarred;
     [self updateRightBarButton];
     [self.sidePanel updateViewConstraints];

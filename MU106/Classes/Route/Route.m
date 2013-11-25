@@ -13,13 +13,27 @@
 - (id)initWithDictionary:(NSDictionary *)dictionary
 {
     if (self = [super init]) {
-        self.id = [dictionary objectForKey:@"route_id"];
-        self.title = [dictionary objectForKey:@"route_title"];
-        self.description = [dictionary objectForKey:@"route_description"];
-        self.price = [dictionary objectForKey:@"route_price"];
-        self.path = [dictionary objectForKey:@"route_path"];
-        self.ownerId = [dictionary objectForKey:@"owner_id"];
-        self.isStarred = NO;
+        
+        [self setValue: [NSNumber numberWithInt: [[dictionary objectForKey:@"route_id"] intValue]]
+                forKey:@"identifier"];
+        
+        [self setValue: [dictionary objectForKey:@"route_title"]
+                forKey:@"title"];
+        
+        [self setValue: [dictionary objectForKey:@"route_description"]
+                forKey:@"routeDescription"];
+        
+        [self setValue: [NSNumber numberWithFloat: [[dictionary objectForKey:@"route_price"] floatValue]]
+                forKey:@"price"];
+        
+        [self setValue: [dictionary objectForKey:@"route_path"]
+                forKey:@"path"];
+        
+        [self setValue: [NSNumber numberWithInt: [[dictionary objectForKey:@"owner_id"] intValue]]
+         forKey:@"ownerId"];
+        
+        [self setValue: NO
+                forKey:@"isStarred"];
     }
     return self;
 }

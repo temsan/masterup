@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 Instup.com. All rights reserved.
 //
 
+#import <CoreData/CoreData.h>
+
+#import "AppDelegate.h"
 #import "RouteListController.h"
 #import "SidePanelController.h"
 #import "CenterController.h"
@@ -37,17 +40,18 @@
 
     sharedRouteClient.delegate = self;
     
+    NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedContext;
+    
     [sharedRouteClient updateRoutesList:^(NSArray *routes) {
         
-        NSEnumerator *enumerator = [routes objectEnumerator];
-        id obj;
-        
-        while ((obj = [enumerator nextObject]))
+        for(id obj in routes)
         {
-            Route *route = [[Route alloc] initWithDictionary:(NSDictionary *)obj];
-            [self.modelRoutes addObject:route];
+            Route *theRoute = [NSEntityDescription insertNewObjectForEntityForName: @"Route"
+                                                            inManagedObjectContext: context];
+      
+            [theRoute initWithDictionary: obj];
+            [self.modelRoutes addObject:theRoute];
 
-            
         }
         [self.tableView reloadData];
 
@@ -115,7 +119,7 @@
     
     cell.lblRoute.text = obj.title;
     cell.lblPrice.text = [NSString stringWithFormat:@"%@ %@", obj.price, NSLocalizedString(@"SHORT CURRENCY", nil)];
-    cell.lblDescription.text = obj.description;
+    cell.lblDescription.text = obj.routeDescription;
     [cell.imgStarred setImage:imgStar];
     
     return cell;

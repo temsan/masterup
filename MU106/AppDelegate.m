@@ -13,6 +13,24 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    
+    self.managedModel = [NSManagedObjectModel mergedModelFromBundles:nil];
+    
+    self.storeCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedModel];
+    
+    NSError *error;
+    
+    NSString *storePath = [[self applicationDirectory] stringByAppendingPathComponent:@"Marshrutki.sqlite"];
+    
+    
+    if (![self.storeCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:[NSURL fileURLWithPath:storePath] options:nil error: &error]) {
+        NSLog(@"Error adding srore coordinator :%@", error);
+    }
+    
+    self.managedContext = [[NSManagedObjectContext alloc] init];
+    [self.managedContext setPersistentStoreCoordinator: self.storeCoordinator];
+     
+    
     return YES;
 }
 							
@@ -41,6 +59,14 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+#pragma mark - Internal Logic
+
+- (NSString *)applicationDirectory
+{
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }
 
 @end
